@@ -13,15 +13,14 @@ class RadioApiService {
 
   static const List<String> fallbackServers = [
     'de1.api.radio-browser.info',
-    'nl1.api.radio-browser.info',
-    'at1.api.radio-browser.info',
+    'all.api.radio-browser.info',
   ];
 
   String _currentServer = fallbackServers.first;
   bool _serverResolved = false;
 
   static const Map<String, String> _headers = {
-    'User-Agent': 'RadioChannelApp/1.0 (Flutter; Mobile/Desktop/Web)',
+    'User-Agent': 'FalahRadioApp/1.0 (Flutter; Mobile/Desktop/Web; Developer: Falah.G.Salieh)',
     'Accept': 'application/json',
   };
 
@@ -31,7 +30,7 @@ class RadioApiService {
     try {
       final uri = Uri.parse('https://all.api.radio-browser.info/json/servers');
       final response = await http.get(uri, headers: _headers).timeout(
-        const Duration(seconds: 4),
+        const Duration(seconds: 6),
       );
       if (response.statusCode == 200) {
         final list = jsonDecode(response.body) as List;
@@ -42,7 +41,7 @@ class RadioApiService {
         }
       }
     } catch (e) {
-      debugPrint('Error discovering server, using default: $e');
+      debugPrint('Server discovery fallback to default: $e');
     }
     _currentServer = fallbackServers.first;
     _serverResolved = true;
@@ -59,7 +58,7 @@ class RadioApiService {
       try {
         final uri = Uri.https(server, path, queryParams);
         final response = await http.get(uri, headers: _headers).timeout(
-          const Duration(seconds: 9),
+          const Duration(seconds: 15),
         );
         if (response.statusCode == 200) {
           _currentServer = server;
