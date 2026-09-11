@@ -1,4 +1,4 @@
-name: falah_radio
+name: radio_channel
 description: "Falah Radio - راديو فلاح - Global Live Radio Stations Streaming & MP3 Recording App."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:falah_radio/models/radio_station.dart';
-import 'package:falah_radio/models/country.dart';
-import 'package:falah_radio/models/language.dart';
-import 'package:falah_radio/models/genre_tag.dart';
-import 'package:falah_radio/utils/country_flags.dart';
+import 'package:radio_channel/models/radio_station.dart';
+import 'package:radio_channel/models/country.dart';
+import 'package:radio_channel/models/language.dart';
+import 'package:radio_channel/models/genre_tag.dart';
+import 'package:radio_channel/utils/country_flags.dart';
 
 void main() {
   group('Radio Models and Helpers Tests', () {

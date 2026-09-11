@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:falah_radio/main.dart';
+import 'package:radio_channel/main.dart';
 
 void main() {
   testWidgets('RadioChannelApp boots up smoke test', (WidgetTester tester) async {
